@@ -2,6 +2,7 @@
 :root {
   --main-color: rgb(72,224,255);
   --secondary-color: #242424;
+  --third-color: #0186fb;
 }
 /*   End Variables   */
 /*      Start Global Rules   */
@@ -136,7 +137,7 @@ header .links ul li a:hover{
 .brief h1 span{
   display :inline-block;
   margin-top:10px;
-  color:rgb(72,224,255);
+  color:var(--third-color);
   font-size:2em;
   font-weight:600;
 }
@@ -151,7 +152,7 @@ header .links ul li a:hover{
 .btn{
   display: inline-block;
   text-decoration: none;
-  background-color: rgb(72,224,255);
+  background-color: var(--main-color);
   color:black ;
   font-size:1.1em;
   font-weight:600;
@@ -162,7 +163,7 @@ header .links ul li a:hover{
   transition: 0.7s ease;
 }
 .btn:hover{
-  color:#0186fb;
+  color:var(--third-color);
   transform:scale(1.1);
 }
 .snd-brief {
@@ -199,7 +200,7 @@ header .links ul li a:hover{
   margin: 20px;
 }
 .social-icons a:hover, .footer .social-icons a:hover{
-  color:rgb(72,224,255);
+  color:var(--main-color);
 }
 
 
@@ -319,7 +320,7 @@ header .links ul li a:hover{
 
 /*--------------------- Footer ----------------------------->*/
 
-.footer{
+.footer .container{
   padding: 2em 0;
   display: flex;
   justify-content: space-between;
@@ -327,7 +328,7 @@ header .links ul li a:hover{
 }
 
 .footer .footer-title{
-  font-size: 1.3em;
+  font-size: 2em;
   font-weight:600;
 }
 
@@ -341,15 +342,19 @@ header .links ul li a:hover{
   padding:0 ;
   margin: 10px;
 }
-/*--------------media query for Large SCreens--------*/
+/*--------media query for Large SCreens--------*/
 @media (max-width : 1200px){
   /*--------query for header &  nav bar -------->*/
   header{
     padding: 20px 20px;
   }
   header .logo{
-    font-weight: 700;
-    font-size :1.1em;
+    color:var(--main-color);
+    font-weight: 800;
+    font-size :1.5em;
+  }
+  header .logo span{
+    display: none;
   }
   header .links .menu {
     display: flex;
@@ -379,7 +384,7 @@ header .links ul li a:hover{
     margin: 0;
     padding: 0;
     position: absolute;
-    background-color: var(--secondary-color);
+    background-color: var(--main-color);
     right: 0;
     min-width: 200px;
     top: calc(100% + 15px);
@@ -390,7 +395,7 @@ header .links ul li a:hover{
     content: "";
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent var(--secondary-color) transparent;
+    border-color: transparent transparent var(--main-color) transparent;
     position: absolute;
     right: 5px;
     top: -20px;
@@ -402,7 +407,7 @@ header .links ul li a:hover{
     display: block;
   }
   header .links ul li a{
-    color: white;
+    color: black;
     text-decoration: none;
     display: block;
     padding:15px;
@@ -412,31 +417,54 @@ header .links ul li a:hover{
     padding-left: 25px;
   }
   header .links ul li:not(:last-child) a {
-    border-bottom: 1px solid var(--main-color);
+    border-bottom: 1px solid white;
+  }
+  header .links ul li a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding:10px; 
+    border-bottom:2px solid var(--main-color);
+  }
+  header .links ul li a:hover{
+    color: var(--third-color);
+    border-bottom:2px solid var(--third-color);
   }
   /*---------------home sec -------------------->*/
   section{
-    padding:40px 40px;
+    padding:20px;
   }
   .main .container {
+    margin-top: 1%;
+  }
+  .main .container, .projects .container, .cards .container{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
-  .brief, .snd-brief{
-    justify-content: center;
     text-align: center;
-    flex-basis: none;
+  }
+  .snd-brief, .brief{
+    justify-content: center;
     min-width: 300px;
-    margin-top: 20px;
+    margin-top: 50px;
   }
   .brief h1 {
-    font-size:3em;
+    font-size:2.2em;
     font-weight:800;
   }
   .brief h1 span{
-    font-size:1.5em;
+    font-size:1.2em;
     font-weight:600;
+    margin-top:5px;
+  }
+  .brief h3{
+    font-size:1.6em;
+    font-weight:800;
+    margin-top:5px;
+    margin-bottom:30px;
+  }
+  .btn{
+    margin-bottom: 30px;
   }
   .poster{
     display: flex;    
@@ -466,9 +494,10 @@ header .links ul li a:hover{
     box-shadow: 0 5px 25px rgba(72 224 255 / 70%);
     border-radius: 20px;
     padding:25px;
-    margin:25px 10px;
+    margin:25px auto;
   }
   /*----------------Projects sec ---------------->*/
+  
   .projects .content{
     display: flex;
     flex-direction: row;
@@ -479,7 +508,7 @@ header .links ul li a:hover{
     min-height:13em;
     width:21em;
     border-radius: 10px;
-    margin:28px 5px;
+    margin:28px auto;
   }
   .project-image img{
     height:13em;
@@ -491,7 +520,7 @@ header .links ul li a:hover{
     font-size: 1em;
   }
   
-  /*--------------------Contact sec ------------------------------>*/
+  /*------------Contact sec -------------->*/
   .contact .card{
     width: 50em;
  }
@@ -501,13 +530,12 @@ header .links ul li a:hover{
   .contant .info p{
     font-size:1.5em;
   }
-  /* ------------Foooter----------------------------- */
-  .footer .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column;
+    
+  .footer .footer-title{
+    font-size: 1.3em;
+    font-weight:600;
   }
+
 }
 /*    MEdia SMAll Screens */
 @media (max-width: 768px ) {
@@ -525,6 +553,20 @@ header .links ul li a:hover{
   .project-image img{
     height:13em;
   }
+ /* --------Foooter---------------- */
+ .footer .container{
+    padding: 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ }
+  .footer .footer-title{
+    font-size: 1.5em;
+    font-weight:600;
+    padding-bottom: 20px;
+  }
+
 }
 
 
