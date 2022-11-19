@@ -343,7 +343,7 @@ header .links ul li a:hover{
   margin: 10px;
 }
 /*--------media query for Large SCreens--------*/
-@media (max-width : 1200px){
+@media (max-width : 1023px){
   /*--------query for header &  nav bar -------->*/
   header{
     padding: 20px 20px;
