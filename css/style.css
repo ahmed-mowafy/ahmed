@@ -137,7 +137,7 @@ header .links ul li a:hover{
 .brief h1 span{
   display :inline-block;
   margin-top:10px;
-  color:var(--third-color);
+  color:var(--main-color);
   font-size:2em;
   font-weight:600;
 }
@@ -343,10 +343,10 @@ header .links ul li a:hover{
   margin: 10px;
 }
 /*--------media query for Large SCreens--------*/
-@media (max-width : 1023px){
+@media (max-width : 1200px){
   /*--------query for header &  nav bar -------->*/
   header{
-    padding: 20px 20px;
+    padding: 20;
   }
   header .logo{
     color:var(--main-color);
