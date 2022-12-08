@@ -124,7 +124,7 @@ header .links ul li a:hover{
   margin-top: 5%;
 }
 .brief{
-  flex-basis: 70%;
+  flex-basis: 65%;
   min-width: 300px;
   margin-top: 70px;
 }
@@ -167,7 +167,7 @@ header .links ul li a:hover{
   transform:scale(1.1);
 }
 .snd-brief {
-  flex-basis: 30%;
+  flex-basis: 35%;
 }
 .poster{
   display: flex;
@@ -196,8 +196,8 @@ header .links ul li a:hover{
   border-radius: 50%;
   color:black;
   text-decoration: none;
-  font-size: 1.8em;
-  margin: 20px;
+  font-size: 1.9em;
+  margin: 15px;
 }
 .social-icons a:hover, .footer .social-icons a:hover{
   color:var(--main-color);
@@ -447,6 +447,7 @@ header .links ul li a:hover{
     justify-content: center;
     min-width: 300px;
     margin-top: 50px;
+    flex-basis: 50%;
   }
   .brief h1 {
     font-size:2.2em;
@@ -475,7 +476,6 @@ header .links ul li a:hover{
     transition: 0.7s ease;
     height:100%;
     width:100%;
-    margin-left: 0;
   }
   .poster:hover, .project-card:hover{
     transform: translateY(-20px);
@@ -537,6 +537,8 @@ header .links ul li a:hover{
   }
 
 }
+/*    MADIA FOR MEDIUM SCREENS*/
+  
 /*    MEdia SMAll Screens */
 @media (max-width: 768px ) {
   section{
