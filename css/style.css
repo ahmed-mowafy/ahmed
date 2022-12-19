@@ -1,6 +1,7 @@
 /*  START Variables   */
 :root {
   --main-color: rgb(72,224,255);
+  --main-blur: rgba(72,224,255,80%);
   --secondary-color: #242424;
   --third-color: #0186fb;
 }
@@ -58,6 +59,13 @@ section{
 @media (max-width:1200px) {
   .title{
     font-size: 3.75em;
+    margin: 100px auto 50px;
+    line-height:normal;
+  }
+}
+@media (max-width:767px) {
+  .title{
+    font-size: 3.5em;
     margin: 100px auto 50px;
     line-height:normal;
   }
@@ -184,9 +192,9 @@ header .links ul li a:hover{
 .poster img{
   width:100%;
   height: 100%;
-  box-shadow: 0px 0px 50px rgba(0,0,0,0.7);
+  box-shadow: 0px 0px 50px rgba(0,0,0,0.6);
   border:5px solid white;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .social-icons{
   align-items: center;
@@ -194,13 +202,13 @@ header .links ul li a:hover{
 }
 .social-icons a{
   border-radius: 50%;
-  color:black;
+  color: var(--main-color);
   text-decoration: none;
   font-size: 1.9em;
   margin: 15px;
 }
 .social-icons a:hover, .footer .social-icons a:hover{
-  color:var(--main-color);
+  color: var(--third-color);
 }
 
 
@@ -222,7 +230,7 @@ header .links ul li a:hover{
 .card{
   background-color: var(--secondary-color);
   width:21.875em;
-  box-shadow: 0 0 40px rgba(72 224 255 / 70%);
+  box-shadow: 0 0 40px var(--main-blur);
   border-radius: 10px;
   padding:25px;
   margin:20px 0px;
@@ -266,21 +274,23 @@ header .links ul li a:hover{
 }
 .about .brief{
   flex-basis: 50%;
-  min-width: 300px;
+  min-width: 400px;
   margin-top: 0px;
 }
 .about .brief h1{
-  color:black;
+  color: var(--main-color);
   font-size:4rem;
   font-weight: 700;
   line-height: 1.8em;
+  margin-top: 0;
 }
 
 .about .brief p{
   display: block;
   color: rgba(0, 0, 0, 0.816);
-  font-size:1.5em;
+  font-size:1.4em;
   font-weight:500;
+  line-height: 2em;
   letter-spacing:1px;
   margin-top:10px;
   margin-bottom:30px;
@@ -297,13 +307,13 @@ header .links ul li a:hover{
 }
 /************END ABOUT BAGE***********/
 /*----------------Projects sec ---------------->*/
-.Projects{
+.projects{
   background:black;
 }
-.Projects .content{
+.projects .content{
   margin-top:30px;
 }
-.Projects .card{
+.projects .card{
   padding:0;
   margin:28px 0px;
 }
@@ -377,7 +387,7 @@ header .links ul li a:hover{
 }
 .footer .social-icons a{
   font-size:1.8em;
-  color: rgb(255, 255, 255);
+  color:  var(--main-color);
   padding:0 ;
   margin: 10px;
 }
@@ -490,8 +500,9 @@ header .links ul li a:hover{
     flex-basis: 50%;
   }
   .brief h1 {
-    font-size:2.2em;
+    font-size:3.5em;
     font-weight:800;
+    line-height: 1.5em;
   }
   .brief h1 span{
     font-size:1.2em;
@@ -499,13 +510,13 @@ header .links ul li a:hover{
     margin-top:5px;
   }
   .brief h3{
-    font-size:1.6em;
+    font-size:2em;
     font-weight:800;
     margin-top:5px;
     margin-bottom:30px;
   }
   .btn{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .poster{
     display: flex;    
@@ -513,9 +524,12 @@ header .links ul li a:hover{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
     transition: 0.7s ease;
-    height:100%;
-    width:100%;
+    height:50%;
+    width:50%;
   }
   .poster:hover, .project-card:hover{
     transform: translateY(-20px);
@@ -536,17 +550,61 @@ header .links ul li a:hover{
     padding:25px;
     margin:25px auto;
   }
+
+  /************START ABOUT BAGE***********/
+  .about{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+  }
+  .about .container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about .brief{
+    min-width: 300px;
+  }
+  .about .brief h1{
+    color: var(--main-color);
+    font-size:4rem;
+    font-weight: 700;
+    line-height: 1.8em;
+    margin-top: 0;
+  }
+
+  .about .brief p{
+    display: block;
+    color: rgba(0, 0, 0, 0.816);
+    font-size:1.4em;
+    font-weight:500;
+    line-height: 2em;
+    letter-spacing:1px;
+    margin-top:10px;
+    margin-bottom:30px;
+  }
+  .about .snd-brief {
+    flex-basis: 35%;
+  }
+  .about .container .snd-brief .poster img{
+    width:100%;
+    height: 100%;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.7);
+    border:5px solid white;
+    margin-bottom: 15px;
+  }
+  /************END ABOUT BAGE***********/
+
   /*----------------Projects sec ---------------->*/
   
   .projects .content{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
   }
-  .project-card{
-    min-height:13em;
-    width:21em;
+  .projects .card{
+    min-height:17em;
+    width:25em;
     border-radius: 10px;
     margin:28px auto;
   }
@@ -584,14 +642,24 @@ header .links ul li a:hover{
   section{
     padding:20px 10px;
   }
+  /*---------------home sec -------------------->*/
+  .snd-brief, .brief{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .brief h1 {
+    font-size:2em;
+  }
+  .btn{
+    margin-bottom: 20px;
+  }
+  .poster{
+    margin-bottom: 15px;
+    height:100%;
+    width:100%;
+  }
 
   /* projects */
-  .project-card{
-    min-height:13em;
-    width:55em;
-    border-radius: 10px;
-    margin:28px 5px;
-  }
   .project-image img{
     height:13em;
   }
